@@ -5,7 +5,8 @@ typedef enum _TriangleType
     INVALID = 0x0,     // 0000
     ISOSCELES = 0x1,   // 0001
     EQUILATERAL = 0x2, // 0010
-    SCALENE = 0x4,     // 0100
+    SCALENE = 0x4      // 0100
+
 } TriangleType;
 
 TriangleType getTriangleType(int side_a, int side_b, int side_c)
