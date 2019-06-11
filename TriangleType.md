@@ -1,4 +1,5 @@
 # TriangleType
+
 "TriangleType" is an interview question that I was asked during my coding
 interview at Microsoft in 2004. I've also used it sometimes myself during
 interviews and interview coaching.
