@@ -17,7 +17,7 @@ Expect to use bitwise operators regularly if you are working in the following ar
 - embedded systems
 - computer hardware or CPU design
 - kernel or device driver development
-- developer APIs that are exposed in C
+- developer APIs
 - debugging assembly
 - security/cryptogophy
 
@@ -55,7 +55,6 @@ HRESULTs & Severity
 https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0c0bcf55-277e-4120-b5dc-f6115fc8dc38
 
 https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a
-
 
 ## Computer Architecture
 
@@ -116,8 +115,6 @@ https://en.wikipedia.org/wiki/XOR_cipher
 
 ## Real Examples
 
-
-https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
 - [Camera Sample Options](https://github.com/microsoft/xbox-live-api/blob/c8dc9f91858d7f7fdd0e4ac7ec5bdd4f865e1bef/InProgressSamples/Kits/ATGTK/FlyCamera.cpp#L61)
 
   Here this sample uses bitwise operators to use a single number to track a variety of options.
@@ -127,9 +124,6 @@ https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11created
   Notice how this sample uses `&` to read which combination of buttons is currently being pressed.
 
 - [D3D 11 Create Device Flag](https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/ne-d3d11-d3d11_create_device_flag)
-
-  If you're looking to use the D3D Graphics Library, you'll use bitwise
-  operators to set or unset Flags when creating a "device" object
 
 https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
 
