@@ -8,6 +8,11 @@ professional software development.
 This repository (`bitwise-operators`) contains supporting resources, including
 working code samples and interview questions.
 
+## Contributing
+
+Feel free to open an issue or pull request against this me/this repro with
+requests for corrections, elaboration, or more examples.
+
 ## Bitwise Operators Overview
 
 Existing documents give an in-depth overview of bitwise operations:
@@ -285,3 +290,7 @@ a good reference book and covers a wide range of bitwise optimizations.
 https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
 
 - Project - building an disassembler
+
+https://en.wikipedia.org/wiki/Single-precision_floating-point_format
+
+HRESULTs & Severity
