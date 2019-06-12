@@ -1,12 +1,11 @@
 # Bitwise Examples
 
-This document is an general overview of bitwise operators and how their used in
-professional software development.
+This document is an general overview of bitwise operators and how they are used
+in professional software development.
 
 ## Repository
 
-This repository (`bitwise-operators`) contains supporting resources, including
-working code samples and interview questions.
+This repository (`bitwise-operators`) contains documention, working code samples, and interview questions.
 
 ## Contributing
 
@@ -15,7 +14,14 @@ requests for corrections, elaboration, or more examples.
 
 ## Bitwise Operators Overview
 
-[Bitwise Operator Overview](./Overview.md)
+Existing documents give an in-depth overview of bitwise operations:
+
+- [Bitwise operation](https://en.wikipedia.org/wiki/Bitwise_operation)
+- [Bit manipulation](https://en.wikipedia.org/wiki/Bit_manipulation)
+
+Here's an overview I put together:
+
+- [Bitwise Operator Overview](./Overview.md)
 
 ## Authentic uses of bitwise operators
 
@@ -27,8 +33,8 @@ Consequently, you should expect that they will show up from time to time in
 coding interviews, especially when a position requires working in low-level
 platform code.
 
-Most of the time it has to with getting the most out of a limited amount of
-memory or working closely with the CPU.
+Often it has to with getting the most out of a limited amount of memory or
+working closely with the CPU.
 
 Expect to use bitwise operators regularly if you are working in the following areas:
 
@@ -40,12 +46,62 @@ Expect to use bitwise operators regularly if you are working in the following ar
 - debugging assembly
 - security/cryptogophy
 
-Outside of those spaces, such as full-stack web-development, it's less likely to
-employ bitwise operators in production code. In all domains, they pop up from
-time to time, often as a means of tracking several options in a single number
-(see Option Flags).
+In all domains they appear from time to time, especially when working with client APIs.
 
-Here are some more specific domains where bitwise operators will be crucial to your job.
+### Setting Options Flags
+
+This particular application of bitwise operators is very common, especially in
+client SDKs.
+
+Essentially bitwise operators allow developers to track several non-exclusive boolean
+properties only using a single integer.
+
+This pattern is a great way to expose "options" or "flags" to consumers of a
+function.
+
+Consider the following enum and function signature:
+
+```c
+typedef enum _SessionOptions
+{
+    NONE = 0x0,                     // 0000
+    LEADERBOARD_SUPPORT = 0x1,      // 0001
+    MULTIPLAYER_SUPPORT = 0x2,      // 0010
+    ONLINE_PRESENCE_SUPPORT = 0x4,  // 0100
+    CHAT_SUPPORT = 0x8,             // 1000
+    ONLINE_DEFAULTS =               // 0111
+        LEADERBOARD_SUPPORT |
+        MULTIPLAYER_SUPPORT |
+        ONLINE_PRESENCE_SUPPORT
+
+} SessionOptions;
+
+void startGameSession(char * name, int sessionOptions);
+```
+
+If you're developing a video game, you may need to call a function like this to
+tell the platform that you'd like to create a game session with certain
+properties.
+
+Consumers of this API can use bitwise operators to assign a value to the
+`sessionOptions` argument.
+
+See the [StartGameSession](./StartGameSession.md) example for more details.
+
+#### Real World Examples
+
+##### Direct3D Initialization
+
+If you're using the Direct3D graphics API, one of the first calls you'll need to
+make is to a function called CreateDevice. CreateDevice takes an arugument who's
+values need to be set and read with bitwise operators:
+
+[D3D 11 Create Device Flag](https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/ne-d3d11-d3d11_create_device_flag)
+
+##### glClear mask
+
+https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/clear
+https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glClear.xml
 
 ### Computer Architecture
 
@@ -73,39 +129,6 @@ understanding bitwise operators.
 If you're looking to enhance your debugging skills beyond source-level
 debugging, understand how bitwise operators work will really help you understand
 the CPU instruction set.
-
-### Options Flags
-
-This particular application of bitwise operators is very common, especially in client SDKs.
-
-Bitwise operators are often used to track several non-exclusive boolean
-properties only using a single integer.
-
-This pattern is a great way to expose "options" or "flags" to consumers of a function.
-This particular version is
-
-Consider the following enum and function signature:
-
-```c
-typedef enum _SessionOptions
-{
-    NONE = 0x0,                     // 0000
-    LEADERBOARD_SUPPORT = 0x1,      // 0001
-    MULTIPLAYER_SUPPORT = 0x2,      // 0010
-    ONLINE_PRESENCE_SUPPORT = 0x4,  // 0100
-    CHAT_SUPPORT = 0x8,             // 1000
-    ONLINE_DEFAULTS =               // 0111
-        LEADERBOARD_SUPPORT |
-        MULTIPLAYER_SUPPORT |
-        ONLINE_PRESENCE_SUPPORT
-
-} SessionOptions;
-
-void startGameSession(char * name, int sessionOptions);
-```
-
-Consumers of this API can use bitwise operators to assign a value to the
-`sessionOptions` argument.
 
 ### Using small amount of space
 
@@ -156,7 +179,6 @@ void startGameSession(char *name, int sessionOptions)
 ```
 
 Notice how the `&` operator is used to test if certain bits are "turned on."
-This is called Masking.
 
 ### Code Optimization
 
@@ -176,20 +198,6 @@ a good reference book and covers a wide range of bitwise optimizations.
 https://en.wikipedia.org/wiki/XOR_cipher
 
 ## Real Examples
-
-### Direct3D Initialization
-
-If you're using the Direct3D graphics API
-
-[D3D 11 Create Device Flag](https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/ne-d3d11-d3d11_create_device_flag)
-
-If you're looking to use the D3D Graphics Library, you'll use bitwise
-operators to set or unset Flags when creating a "device" object
-
-### glClear mask
-
-https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/clear
-https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glClear.xml
 
 
 https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
