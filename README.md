@@ -61,8 +61,16 @@ You can use `&` to turn off specific bits by including all the bits *except* the
 bits you want to turn off. This example turns off the first bit:
 
 ```c
-0111 & 0001 -> 0110
+0111 & 1110 -> 0110
 ```
+
+Often, developers use the result of a bitwise AND operation in an conditional
+expression. When the result of a bitwise AND is 0 (0000), it indicates that the
+specified bits are not present and will be evaluated as `false` in conditional expressions.
+
+Similarly, any non-zero result of a bitwise AND indidcates that the specified bits ARE present. Any non-zero value gets evaluated as `true` in a conditional expressions.
+
+The examples and discussion around setting and checking bit flags illustrate this.
 
 ### Using bitwise inclusive OR
 
@@ -124,12 +132,14 @@ Expect to use bitwise operators regularly if you are working in the following ar
 - kernel or device driver development
 - developer APIs that are exposed in C
 - debugging assembly
+- security/cryptogophy
 
 Outside of those spaces, such as full-stack web-development, it's less likely to
 employ bitwise operators in production code. In all domains, they pop up from
-time to time, often as a means of tracking several options in a single number.
+time to time, often as a means of tracking several options in a single number
+(see Option Flags).
 
-Here are some more specific domains where bitwise operators will help you do your job.
+Here are some more specific domains where bitwise operators will be crucial to your job.
 
 ### Computer Architecture
 
@@ -155,9 +165,12 @@ Understanding the target instruction set and its assembly code requires
 understanding bitwise operators.
 
 If you're looking to enhance your debugging skills beyond source-level
-debugging, bitwise operators will really help you understand the CPU instruction set.
+debugging, understand how bitwise operators work will really help you understand
+the CPU instruction set.
 
 ### Options Flags
+
+This particular application of bitwise operators is very common, especially in client SDKs.
 
 Bitwise operators are often used to track several non-exclusive boolean
 properties only using a single integer.
@@ -263,3 +276,12 @@ a good reference book and covers a wide range of bitwise optimizations.
 - [UWP Input Interfacing](https://github.com/microsoft/Xbox-ATG-Samples/blob/a733a3992a74c9a8f733851b53952edd7659bdce/UWPSamples/System/InputInterfacingUWP/InputInterfacingUWP.cpp#L45)
 
   Notice how this sample uses `&` to read which combination of buttons is currently being pressed.
+
+- [D3D 11 Create Device Flag](https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/ne-d3d11-d3d11_create_device_flag)
+
+  If you're looking to use the D3D Graphics Library, you'll use bitwise
+  operators to set or unset Flags when creating a "device" object
+
+https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
+
+- Project - building an disassembler
