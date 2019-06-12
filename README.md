@@ -294,3 +294,7 @@ https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11created
 https://en.wikipedia.org/wiki/Single-precision_floating-point_format
 
 HRESULTs & Severity
+
+
+Books
+https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=
