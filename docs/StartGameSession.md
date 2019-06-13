@@ -1,3 +1,4 @@
+# Start Game Session
 
 Consider the following enum and function signature:
 
@@ -28,12 +29,12 @@ Consumers of this API can use bitwise operators to assign a value to the
 
 See the [StartGameSession](./StartGameSession.md) example for more details.
 
-### Can expose different combinations of flags
+## Can expose different combinations of flags
 
 Note how ONLINE_DEFAULTS is a bitwise combination of the relevant values.
 Useful bitwise combinations can be exposed to API consumers or used in other logic.
 
-### Using the & operator and masking to read bits
+## Using the & operator and masking to read bits
 
 Consider how this implementation of `startGameSession` evaluates `sessionOptions`:
 

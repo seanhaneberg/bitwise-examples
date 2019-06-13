@@ -44,17 +44,19 @@ values need to be set and read with bitwise operators:
 
 ### glClear mask
 
-https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/clear
-https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glClear.xml
+[glClear() for OpenGL](https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glClear.xml)
+
+[clear() for WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/clear)
 
 ## Reading Bit Flags
 
 ## Using Masks to organize bits in an integer
 
-HRESULTs & Severity
-https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0c0bcf55-277e-4120-b5dc-f6115fc8dc38
+### HRESULTs & Severity
 
-https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a
+[HRESULT Binary Format](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)
+
+[HRESULT from Win32 Error Code Macro](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/0c0bcf55-277e-4120-b5dc-f6115fc8dc38)
 
 ## Computer Architecture
 
@@ -111,7 +113,7 @@ a good reference book and covers a wide range of bitwise optimizations.
 
 ### Security/Cryptography
 
-https://en.wikipedia.org/wiki/XOR_cipher
+[XOR Cipher](https://en.wikipedia.org/wiki/XOR_cipher)
 
 ## Real Examples
 
@@ -124,13 +126,3 @@ https://en.wikipedia.org/wiki/XOR_cipher
   Notice how this sample uses `&` to read which combination of buttons is currently being pressed.
 
 - [D3D 11 Create Device Flag](https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/ne-d3d11-d3d11_create_device_flag)
-
-https://docs.microsoft.com/en-us/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice
-
-- Project - building an disassembler
-
-https://en.wikipedia.org/wiki/Single-precision_floating-point_format
-
-
-Books
-https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=
